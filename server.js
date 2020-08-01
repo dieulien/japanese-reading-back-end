@@ -13,13 +13,21 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+// const pg = knex({
+//   client: "pg",
+//   connection: {
+//     host: "localhost",
+//     user: "postgres",
+//     password: "pgpassword",
+//     database: "japlearn",
+//   },
+// });
+
 const pg = knex({
   client: "pg",
   connection: {
-    host: "localhost",
-    user: "postgres",
-    password: "pgpassword",
-    database: "japlearn",
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
