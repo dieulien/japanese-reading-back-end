@@ -22,6 +22,7 @@ app.use(cors());
 //     database: "japlearn",
 //   },
 // });
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 const pg = knex({
   client: "pg",
